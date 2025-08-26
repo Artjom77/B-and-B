@@ -152,7 +152,7 @@ def main():
     test_results.append(("Analytics Comparison", success))
     
     # Authentication tests
-    success = tester.test_pin_authentication()
+    success, _ = tester.test_pin_authentication()
     test_results.append(("PIN Authentication", success))
     
     success, _ = tester.test_wrong_pin_authentication()
@@ -181,7 +181,7 @@ def main():
     success, _ = tester.test_ai_chat()
     test_results.append(("AI Chat", success))
     
-    success = tester.test_project_upload()
+    success, _ = tester.test_project_upload()
     test_results.append(("Project Upload", success))
     
     # Print summary
