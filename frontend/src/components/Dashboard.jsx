@@ -495,18 +495,8 @@ const Dashboard = ({ authData, onLogout }) => {
             </Card>
           </TabsContent>
 
-          <TabsContent value="ai-chat" className="space-y-6">
-            <Card className="bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-xl border border-white/20">
-              <CardContent className="p-8 text-center">
-                <MessageSquare className="w-16 h-16 text-white/50 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">AI Assistant Chat</h3>
-                <p className="text-white/70 mb-6">Your intelligent lead analysis companion</p>
-                <Button className="bg-gradient-to-r from-blue-500 to-purple-600">
-                  <Sparkles className="w-4 h-4 mr-2" />
-                  Start Conversation
-                </Button>
-              </CardContent>
-            </Card>
+          <TabsContent value="ai-chat" className="space-y-6 h-[calc(100vh-12rem)]">
+            <AIAssistantChat dashboardData={dashboardData} />
           </TabsContent>
         </Tabs>
       </div>
