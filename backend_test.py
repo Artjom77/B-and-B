@@ -142,25 +142,47 @@ def main():
     test_results = []
     
     # Basic API tests
-    test_results.append(("Health Check", tester.test_health_check()))
-    test_results.append(("Dashboard Analytics", tester.test_dashboard_analytics()))
-    test_results.append(("Analytics Comparison", tester.test_analytics_comparison()))
+    success, _ = tester.test_health_check()
+    test_results.append(("Health Check", success))
+    
+    success, _ = tester.test_dashboard_analytics()
+    test_results.append(("Dashboard Analytics", success))
+    
+    success, _ = tester.test_analytics_comparison()
+    test_results.append(("Analytics Comparison", success))
     
     # Authentication tests
-    test_results.append(("PIN Authentication", tester.test_pin_authentication()))
-    test_results.append(("Wrong PIN Auth", tester.test_wrong_pin_authentication()))
-    test_results.append(("Biometric Auth", tester.test_biometric_authentication()))
-    test_results.append(("Guest Auth", tester.test_guest_authentication()))
+    success = tester.test_pin_authentication()
+    test_results.append(("PIN Authentication", success))
+    
+    success, _ = tester.test_wrong_pin_authentication()
+    test_results.append(("Wrong PIN Auth", success))
+    
+    success, _ = tester.test_biometric_authentication()
+    test_results.append(("Biometric Auth", success))
+    
+    success, _ = tester.test_guest_authentication()
+    test_results.append(("Guest Auth", success))
     
     # Data endpoints tests
-    test_results.append(("Leads List", tester.test_leads_list()))
-    test_results.append(("Hot Leads", tester.test_hot_leads()))
-    test_results.append(("Lead Analysis", tester.test_lead_analysis()))
-    test_results.append(("Projects List", tester.test_projects_list()))
+    success, _ = tester.test_leads_list()
+    test_results.append(("Leads List", success))
+    
+    success, _ = tester.test_hot_leads()
+    test_results.append(("Hot Leads", success))
+    
+    success, _ = tester.test_lead_analysis()
+    test_results.append(("Lead Analysis", success))
+    
+    success, _ = tester.test_projects_list()
+    test_results.append(("Projects List", success))
     
     # AI and advanced features
-    test_results.append(("AI Chat", tester.test_ai_chat()))
-    test_results.append(("Project Upload", tester.test_project_upload()))
+    success, _ = tester.test_ai_chat()
+    test_results.append(("AI Chat", success))
+    
+    success = tester.test_project_upload()
+    test_results.append(("Project Upload", success))
     
     # Print summary
     print("\n" + "=" * 50)
@@ -170,7 +192,7 @@ def main():
     passed_tests = []
     failed_tests = []
     
-    for test_name, (success, _) in test_results:
+    for test_name, success in test_results:
         if success:
             passed_tests.append(test_name)
         else:
