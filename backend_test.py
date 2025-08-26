@@ -95,7 +95,7 @@ class BBLeadHunterAPITester:
         if success and 'token' in response:
             self.token = response['token']
             print(f"   Token received: {self.token[:20]}...")
-        return success
+        return success, response
 
     def test_wrong_pin_authentication(self):
         """Test wrong PIN authentication"""
