@@ -130,7 +130,7 @@ class BBLeadHunterAPITester:
         print("✅ Endpoint available at /api/projects/upload")
         self.tests_run += 1
         self.tests_passed += 1
-        return True
+        return True, {}
 
 def main():
     print("🚀 Starting B&B Lead Hunter API Tests")
