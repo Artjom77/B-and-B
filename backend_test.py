@@ -120,7 +120,7 @@ class BBLeadHunterAPITester:
         success, response = self.run_test("AI Chat", "POST", "api/ai/chat", 200, data=chat_data)
         if success and 'session_id' in response:
             self.session_id = response['session_id']
-        return success
+        return success, response
 
     def test_project_upload(self):
         """Test project file upload (mock)"""
