@@ -457,45 +457,15 @@ const Dashboard = ({ authData, onLogout }) => {
           </TabsContent>
 
           <TabsContent value="leads" className="space-y-6">
-            <Card className="bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-xl border border-white/20">
-              <CardContent className="p-8 text-center">
-                <Users className="w-16 h-16 text-white/50 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">Leads Management</h3>
-                <p className="text-white/70 mb-6">Coming soon in the next update</p>
-                <Button className="bg-gradient-to-r from-blue-500 to-purple-600">
-                  <Upload className="w-4 h-4 mr-2" />
-                  Import Leads
-                </Button>
-              </CardContent>
-            </Card>
+            <LeadsSection />
           </TabsContent>
 
           <TabsContent value="projects" className="space-y-6">
-            <Card className="bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-xl border border-white/20">
-              <CardContent className="p-8 text-center">
-                <Target className="w-16 h-16 text-white/50 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">Project Gallery</h3>
-                <p className="text-white/70 mb-6">Manage AZIZI projects and uploads</p>
-                <Button className="bg-gradient-to-r from-blue-500 to-purple-600">
-                  <Upload className="w-4 h-4 mr-2" />
-                  Upload Project
-                </Button>
-              </CardContent>
-            </Card>
+            <ProjectsSection />
           </TabsContent>
 
           <TabsContent value="analytics" className="space-y-6">
-            <Card className="bg-gradient-to-br from-white/5 via-white/10 to-white/5 backdrop-blur-xl border border-white/20">
-              <CardContent className="p-8 text-center">
-                <TrendingUp className="w-16 h-16 text-white/50 mx-auto mb-4" />
-                <h3 className="text-xl font-semibold text-white mb-2">Advanced Analytics</h3>
-                <p className="text-white/70 mb-6">Month comparison and detailed insights</p>
-                <Button className="bg-gradient-to-r from-blue-500 to-purple-600">
-                  <Download className="w-4 h-4 mr-2" />
-                  Export Report
-                </Button>
-              </CardContent>
-            </Card>
+            <AnalyticsSection />
           </TabsContent>
 
           <TabsContent value="ai-chat" className="space-y-6 h-[calc(100vh-12rem)]">
