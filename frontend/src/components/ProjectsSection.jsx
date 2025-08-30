@@ -279,7 +279,7 @@ const ProjectsSection = () => {
     const matchesLocation = selectedLocation === 'All' || project.location.includes(selectedLocation);
     
     const matchesPriceRange = selectedPriceRange === 'All' || 
-      (selectedPriceRange === '< 1M' && project.priceRange.includes('500K') || project.priceRange.includes('400K') || project.priceRange.includes('650K')) ||
+      (selectedPriceRange === 'under1M' && (project.priceRange.includes('500K') || project.priceRange.includes('400K') || project.priceRange.includes('650K'))) ||
       (selectedPriceRange === '1-2M' && (project.priceRange.includes('1.') || project.priceRange.includes('2M'))) ||
       (selectedPriceRange === '2-3M' && project.priceRange.includes('3M')) ||
       (selectedPriceRange === '3M+' && (project.priceRange.includes('4M') || project.priceRange.includes('5M') || project.priceRange.includes('6M')));
