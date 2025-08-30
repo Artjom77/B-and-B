@@ -343,7 +343,7 @@ const AnalyticsSection = () => {
               <ComparisonCard
                 title="Deals Closed"
                 data={comparisonData.dealsClosedAZIZI}
-                icon={Handshake}
+                icon={Users}
               />
               <ComparisonCard
                 title="Total Revenue"
