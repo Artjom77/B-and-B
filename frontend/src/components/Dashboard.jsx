@@ -6,6 +6,9 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import AIAssistantChat from './AIAssistantChat';
+import LeadsSection from './LeadsSection';
+import ProjectsSection from './ProjectsSection';
+import AnalyticsSection from './AnalyticsSection';
 import { 
   TrendingUp, 
   Users, 
