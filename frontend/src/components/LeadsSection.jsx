@@ -237,7 +237,11 @@ const LeadsSection = () => {
                     innerRadius={40}
                     paddingAngle={2}
                     dataKey="count"
-                    onClick={(entry) => setSelectedSegment(entry.id)}
+                    onClick={(entry, index) => {
+                      if (entry && entry.id) {
+                        setSelectedSegment(entry.id);
+                      }
+                    }}
                     className="cursor-pointer"
                   >
                     {funnelData.map((entry, index) => (
