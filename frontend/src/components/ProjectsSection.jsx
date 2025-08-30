@@ -11,7 +11,7 @@ import {
   Building2, Search, Filter, Grid3x3, List, Map, Eye, Download, 
   Share2, Calculator, Heart, MapPin, Clock, DollarSign, TrendingUp,
   Car, Plane, Train, ShoppingBag, Dumbbell, Waves, TreePine, Wifi,
-  Shield, Star, Users, Home, Bed, Bath, Square
+  Shield, Star, Users, Home, Bed, Bath, Square, CheckCircle
 } from 'lucide-react';
 
 const ProjectsSection = () => {
