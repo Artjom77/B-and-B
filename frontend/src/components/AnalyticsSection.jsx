@@ -13,7 +13,7 @@ import { Progress } from './ui/progress';
 import { 
   TrendingUp, TrendingDown, Calendar, Download, Brain, 
   Globe, PieChart as PieChartIcon, BarChart3, Target,
-  Users, DollarSign, Handshake, Clock, Star, ArrowRight
+  Users, DollarSign, Clock, Star, ArrowRight, CheckCircle
 } from 'lucide-react';
 
 const AnalyticsSection = () => {
