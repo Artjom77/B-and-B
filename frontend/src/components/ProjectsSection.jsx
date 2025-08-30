@@ -523,7 +523,7 @@ const ProjectsSection = () => {
                 className="w-full bg-white/5 border border-white/20 rounded-md px-3 py-2 text-white text-sm focus:border-blue-500/50"
               >
                 <option value="All">All Prices</option>
-                <option value="< 1M">< 1M AED</option>
+                <option value="under1M">&lt; 1M AED</option>
                 <option value="1-2M">1-2M AED</option>
                 <option value="2-3M">2-3M AED</option>
                 <option value="3M+">3M+ AED</option>
