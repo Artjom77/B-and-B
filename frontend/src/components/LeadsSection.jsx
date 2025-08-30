@@ -11,7 +11,7 @@ import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { Progress } from './ui/progress';
 import { 
   Users, Search, Filter, Download, Eye, MessageSquare, 
-  Handshake, Clock, CheckCircle, DollarSign, Target,
+  Clock, CheckCircle, DollarSign, Target,
   TrendingUp, TrendingDown, Mail, Phone, MapPin
 } from 'lucide-react';
 
