@@ -421,7 +421,7 @@ const ProjectsSection = () => {
                   {project.leadCount} leads
                 </span>
                 <span className="flex items-center">
-                  <Handshake className="w-3 h-3 mr-1" />
+                  <Users className="w-3 h-3 mr-1" />
                   {project.dealsCount} deals
                 </span>
               </div>
