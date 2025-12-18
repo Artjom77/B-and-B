@@ -437,8 +437,8 @@
             <input type="range" id="volumeSlider" min="0" max="100" value="50" onchange="changeVolume(this.value)">
         </div>
         <div class="music-label">
-            <div class="music-title">🎬 Home Alone</div>
-            <div>"Somewhere in My Memory"</div>
+            <div class="music-title">🎸 Jingle Bell Rock</div>
+            <div>Bobby Helms</div>
         </div>
     </div>
 
@@ -523,11 +523,11 @@
             player = new YT.Player('youtubePlayer', {
                 height: '1',
                 width: '1',
-                videoId: 'FHDYv9pXjAk', // Home Alone - Somewhere in My Memory
+                videoId: 'itcMLwMEeMQ', // Jingle Bell Rock - Bobby Helms
                 playerVars: {
-                    'autoplay': 0,
+                    'autoplay': 1,
                     'loop': 1,
-                    'playlist': 'FHDYv9pXjAk'
+                    'playlist': 'itcMLwMEeMQ'
                 },
                 events: {
                     'onReady': onPlayerReady,
@@ -540,6 +540,11 @@
             const savedVolume = localStorage.getItem('musicVolume') || 50;
             document.getElementById('volumeSlider').value = savedVolume;
             player.setVolume(savedVolume);
+            // Автозапуск музыки
+            player.playVideo();
+            isPlaying = true;
+            document.getElementById('musicBtn').innerHTML = '🎶';
+            document.getElementById('musicBtn').classList.add('playing');
         }
 
         function onPlayerStateChange(event) {
