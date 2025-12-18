@@ -56,7 +56,7 @@ const NewYearDecoration = () => {
             <div className="banner-stars">✨</div>
             <div className="banner-text">
               <span className="banner-emoji">🎅</span>
-              <span className="happy-new-year">С Новым 2025 Годом!</span>
+              <span className="happy-new-year">С Новым 2026 Годом!</span>
               <span className="banner-emoji">🎁</span>
             </div>
             <div className="banner-subtext">Счастья, здоровья и успехов!</div>
