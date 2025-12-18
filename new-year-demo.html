@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎄 С Новым 2026 Годом! 🎄</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1e3a5f 0%, #0f1f3d 50%, #1a0a2e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Snowfall */
+        .snowfall-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -50px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            animation: snowfall linear infinite;
+            will-change: transform;
+        }
+
+        @keyframes snowfall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Christmas tree */
+        .christmas-tree {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9998;
+            pointer-events: none;
+        }
+
+        .tree-container {
+            position: relative;
+            animation: tree-sway 4s ease-in-out infinite;
+        }
+
+        .tree-emoji {
+            font-size: 100px;
+            filter: drop-shadow(0 0 30px rgba(0, 255, 100, 0.6));
+        }
+
+        @keyframes tree-sway {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        /* Banner */
+        .new-year-banner {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            animation: banner-appear 1s ease-out;
+        }
+
+        .banner-content {
+            background: linear-gradient(135deg,
+                rgba(220, 20, 60, 0.95),
+                rgba(178, 34, 34, 0.95),
+                rgba(139, 0, 0, 0.95)
+            );
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            border-radius: 25px;
+            border: 4px solid gold;
+            box-shadow:
+                0 15px 50px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(255, 215, 0, 0.4),
+                inset 0 2px 0 rgba(255, 255, 255, 0.3);
+            text-align: center;
+        }
+
+        .banner-stars {
+            font-size: 24px;
+            animation: sparkle 1.5s ease-in-out infinite;
+        }
+
+        .banner-text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+        }
+
+        .banner-emoji {
+            font-size: 40px;
+            animation: bounce-emoji 2s ease-in-out infinite;
+        }
+
+        .banner-emoji:last-child {
+            animation-delay: 0.5s;
+        }
+
+        .happy-new-year {
+            font-size: 32px;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow:
+                3px 3px 6px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(255, 215, 0, 0.6);
+            letter-spacing: 3px;
+        }
+
+        .banner-subtext {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes banner-appear {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-50px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0) scale(1);
+            }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.3); }
+        }
+
+        @keyframes bounce-emoji {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* Garland */
+        .garland {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .garland-light {
+            font-size: 16px;
+            animation: garland-blink 1s ease-in-out infinite;
+        }
+
+        @keyframes garland-blink {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.7); }
+        }
+
+        /* Corner decorations */
+        .corner-decoration {
+            position: fixed;
+            font-size: 60px;
+            z-index: 9997;
+            animation: corner-float 3s ease-in-out infinite;
+            pointer-events: none;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+        }
+
+        .top-right { top: 120px; right: 30px; }
+        .bottom-left { bottom: 30px; left: 30px; animation-delay: 1.5s; }
+        .top-left { top: 120px; left: 30px; animation-delay: 0.7s; }
+
+        @keyframes corner-float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(15deg); }
+        }
+
+        /* Main content */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 150px 20px 50px;
+            text-align: center;
+        }
+
+        .greeting-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            padding: 40px 60px;
+            border-radius: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+        }
+
+        .greeting-card h1 {
+            color: #fff;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .greeting-card p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .decorative-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, gold, transparent);
+            margin: 20px auto;
+        }
+
+        .wishes-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .wishes-list li {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 16px;
+            margin: 10px 0;
+            animation: fade-in 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .wishes-list li:nth-child(1) { animation-delay: 0.5s; }
+        .wishes-list li:nth-child(2) { animation-delay: 0.7s; }
+        .wishes-list li:nth-child(3) { animation-delay: 0.9s; }
+        .wishes-list li:nth-child(4) { animation-delay: 1.1s; }
+
+        @keyframes fade-in {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Snowflakes -->
+    <div class="snowfall-container" id="snowfall"></div>
+
+    <!-- Christmas Tree -->
+    <div class="christmas-tree">
+        <div class="tree-container">
+            <span class="tree-emoji">🎄</span>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="new-year-banner">
+        <div class="banner-content">
+            <div class="banner-stars">✨ ⭐ ✨</div>
+            <div class="banner-text">
+                <span class="banner-emoji">🎅</span>
+                <span class="happy-new-year">С Новым 2026 Годом!</span>
+                <span class="banner-emoji">🎁</span>
+            </div>
+            <div class="banner-subtext">Счастья, здоровья и успехов!</div>
+            <div class="garland" id="garland"></div>
+        </div>
+    </div>
+
+    <!-- Corner decorations -->
+    <div class="corner-decoration top-right">🎊</div>
+    <div class="corner-decoration bottom-left">🎉</div>
+    <div class="corner-decoration top-left">⭐</div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="greeting-card">
+            <h1>🌟 Новогоднее поздравление 🌟</h1>
+            <div class="decorative-line"></div>
+            <p>Пусть новый год принесёт вам:</p>
+            <ul class="wishes-list">
+                <li>🎯 Достижение всех целей</li>
+                <li>💖 Любовь и гармонию</li>
+                <li>💰 Финансовое благополучие</li>
+                <li>🌈 Яркие и счастливые моменты</li>
+            </ul>
+            <div class="decorative-line"></div>
+            <p style="margin-top: 20px; font-size: 24px;">🥂 С праздником! 🥂</p>
+        </div>
+    </div>
+
+    <script>
+        // Generate snowflakes
+        const snowfallContainer = document.getElementById('snowfall');
+        for (let i = 0; i < 60; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.className = 'snowflake';
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = (5 + Math.random() * 10) + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = (10 + Math.random() * 25) + 'px';
+            snowflake.style.opacity = 0.4 + Math.random() * 0.6;
+            snowfallContainer.appendChild(snowflake);
+        }
+
+        // Generate garland lights
+        const garland = document.getElementById('garland');
+        const colors = ['🔴', '🟡', '🟢', '🔵', '🟣', '🔴', '🟡', '🟢', '🔵', '🟣', '🔴', '🟡'];
+        colors.forEach((light, i) => {
+            const span = document.createElement('span');
+            span.className = 'garland-light';
+            span.innerHTML = light;
+            span.style.animationDelay = (i * 0.15) + 's';
+            garland.appendChild(span);
+        });
+    </script>
+</body>
+</html>
