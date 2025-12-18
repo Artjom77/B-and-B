@@ -181,3 +181,290 @@
 .cursor-fancy {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="%23667eea"/></svg>'), auto;
 }
+
+/* ==================== NEW YEAR DECORATION STYLES ==================== */
+
+/* Snowfall container */
+.snowfall-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Individual snowflake */
+.snowflake {
+  position: absolute;
+  top: -50px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: snowfall linear infinite;
+  will-change: transform;
+}
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-50px) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
+/* Christmas tree decoration */
+.christmas-tree {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9998;
+  pointer-events: none;
+}
+
+.tree-container {
+  position: relative;
+  animation: tree-sway 4s ease-in-out infinite;
+}
+
+.tree-emoji {
+  font-size: 80px;
+  filter: drop-shadow(0 0 20px rgba(0, 255, 100, 0.5));
+}
+
+.tree-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(0, 255, 100, 0.3) 0%, transparent 70%);
+  animation: tree-glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes tree-sway {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes tree-glow-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+}
+
+/* New Year Banner */
+.new-year-banner {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  animation: banner-appear 1s ease-out;
+}
+
+.banner-content {
+  background: linear-gradient(135deg,
+    rgba(220, 20, 60, 0.95),
+    rgba(178, 34, 34, 0.95),
+    rgba(139, 0, 0, 0.95)
+  );
+  backdrop-filter: blur(10px);
+  padding: 15px 40px;
+  border-radius: 20px;
+  border: 3px solid gold;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(255, 215, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  text-align: center;
+}
+
+.banner-stars {
+  font-size: 20px;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+.banner-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 10px 0;
+}
+
+.banner-emoji {
+  font-size: 30px;
+  animation: bounce-emoji 2s ease-in-out infinite;
+}
+
+.banner-emoji:last-child {
+  animation-delay: 0.5s;
+}
+
+.happy-new-year {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(255, 215, 0, 0.5);
+  letter-spacing: 2px;
+}
+
+.banner-subtext {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 5px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.banner-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #333, #555);
+  border: 2px solid gold;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  pointer-events: auto;
+}
+
+.banner-close:hover {
+  transform: scale(1.1) rotate(90deg);
+  background: linear-gradient(135deg, #555, #777);
+}
+
+@keyframes banner-appear {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes bounce-emoji {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Garland lights */
+.garland {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.garland-light {
+  font-size: 12px;
+  animation: garland-blink 1s ease-in-out infinite;
+  filter: drop-shadow(0 0 5px currentColor);
+}
+
+@keyframes garland-blink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+/* Corner decorations */
+.corner-decoration {
+  position: fixed;
+  font-size: 50px;
+  z-index: 9997;
+  animation: corner-float 3s ease-in-out infinite;
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
+}
+
+.corner-decoration.top-right {
+  top: 100px;
+  right: 20px;
+}
+
+.corner-decoration.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  animation-delay: 1.5s;
+}
+
+@keyframes corner-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(10deg);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .new-year-banner {
+    width: 90%;
+  }
+
+  .banner-content {
+    padding: 12px 20px;
+  }
+
+  .happy-new-year {
+    font-size: 18px;
+  }
+
+  .banner-emoji {
+    font-size: 24px;
+  }
+
+  .tree-emoji {
+    font-size: 60px;
+  }
+
+  .corner-decoration {
+    font-size: 35px;
+  }
+}

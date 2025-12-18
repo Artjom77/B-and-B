@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import LoginScreen from "./components/LoginScreen";
 import Dashboard from "./components/Dashboard";
+import NewYearDecoration from "./components/NewYearDecoration";
 import { Toaster } from "./components/ui/sonner";
 
 function App() {
@@ -50,14 +51,15 @@ function App() {
 
   return (
     <div className="App">
+      <NewYearDecoration />
       {isAuthenticated ? (
-        <Dashboard 
-          authData={authData} 
-          onLogout={handleLogout} 
+        <Dashboard
+          authData={authData}
+          onLogout={handleLogout}
         />
       ) : (
-        <LoginScreen 
-          onAuthenticated={handleAuthenticated} 
+        <LoginScreen
+          onAuthenticated={handleAuthenticated}
         />
       )}
       <Toaster />
